@@ -1,18 +1,22 @@
 import { Event } from "../data/events";
+import { EventCard } from "./EventCard";
 
 interface EventListProps {
   events: Event[];
 }
 
 export function EventList({ events }: EventListProps) {
-  if (!events || events.length === 0) {
-    return <p>No events available.</p>;
-  }
-
   return (
-    <div className="event-list">
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+        gap: "20px",
+        marginTop: "20px",
+      }}
+    >
       {events.map((event) => (
-        <h2>{event.title}</h2>
+        <EventCard key={event.id} event={event} />
       ))}
     </div>
   );

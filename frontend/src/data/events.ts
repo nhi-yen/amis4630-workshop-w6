@@ -57,7 +57,7 @@ export const events: Event[] = [
         description:
             "Outdoor concert featuring regional indie and alternative artists along the downtown riverfront.",
         availableTickets: 300,
-        price: 40,
+        price: 0,
     },
     {
         id: 6,
